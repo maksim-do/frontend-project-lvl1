@@ -1,42 +1,44 @@
 import readlineSync from 'readline-sync';
+import checkParity from './games/even';
+import calculator from './games/calc';
 
-const checkParity = (number) => {
-  const parity = number % 2 ? 'no' : 'yes';
-  return [number, parity];
+const prepareData = {
+  even: checkParity,
+  calc: calculator,
 };
 
-const getArrayRandomNumbers = () => {
-  const randomSetNumber = new Set();
-  do {
-    randomSetNumber.add(Math.round(Math.random() * 1000000));
-  } while (randomSetNumber.size !== 3);
-  return Array.from(randomSetNumber);
-};
-
-const hello = () => {
+const hello = (task) => {
+  console.log(`Welcome to the Brain Games!\n${task}`);
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello ${userName}!`);
-  console.log('Welcome to the Brain Games!\nAnswer "yes" if the number is even, otherwise answer "no".');
   return userName;
 };
 
-const game = ([number, parity]) => {
-  console.log(`Question: ${number}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (parity !== answer) return false;
-  return true;
+
+const gameStage = ({ data, answer }) => {
+  console.log(`Question: ${data}`);
+  const answerUser = readlineSync.question('Your answer: ');
+  return answer !== answerUser ? answerUser : false;
 };
 
-export default () => {
-  const userName = hello();
-  const randomNumbers = getArrayRandomNumbers().map((el) => checkParity(el));
-  // eslint-disable-next-line no-restricted-syntax
-  for (const el of randomNumbers) {
-    if (!game(el)) {
-      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
-      return;
-    }
-    console.log('Correct!');
+const game = (metodPrepare, attempts, userName) => {
+  if (attempts === 0) {
+    console.log(`Congratulations, ${userName}!`);
+    return;
   }
-  console.log(`Congratulations, ${userName}!`);
+  const { data, answer } = metodPrepare();
+  const resultGameStage = gameStage({ data, answer });
+  if (resultGameStage) {
+    console.log(`'${resultGameStage}' is wrong answer ;(. Correct answer was "'${answer}'.\nLet's try again, ${userName}!`);
+    return;
+  }
+  console.log('Correct!');
+  game(metodPrepare, attempts - 1, userName);
+};
+
+export default (nameOfGame) => {
+  const numberOfAttempts = 3;
+  const { mission, metodPrepareData } = prepareData[nameOfGame]();
+  const userName = hello(mission);
+  game(metodPrepareData, numberOfAttempts, userName);
 };

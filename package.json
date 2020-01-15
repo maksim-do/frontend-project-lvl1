@@ -1,13 +1,14 @@
 {
   "name": "my-frontend-project-lvl1",
   "version": "1.0.0",
-  "description": "",
+  "description": "frontend-project-lvl1",
   "main": "dist/bin/brain-games.js",
   "bin": {
-    "brain-even": "dist/bin/brain-games.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
-    "dist/bin"
+    "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/maksim-do/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Maksim Do",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/maksim-do/frontend-project-lvl1/issues"

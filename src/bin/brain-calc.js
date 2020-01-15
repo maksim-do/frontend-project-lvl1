@@ -2,4 +2,4 @@
 
 import game from '..';
 
-game();
+game('calc');
