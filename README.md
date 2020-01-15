@@ -3,3 +3,4 @@
 [![Build Status](https://travis-ci.com/maksim-do/frontend-project-lvl1.svg?branch=master)](https://travis-ci.com/maksim-do/frontend-project-lvl1)
 [![asciicast](https://asciinema.org/a/SxzxMnG7eTAEY9QElX9GsU6Dn.svg)](https://asciinema.org/a/SxzxMnG7eTAEY9QElX9GsU6Dn)
 [![asciicast](https://asciinema.org/a/tx0mPlCq7kUav5fT3bsiGHKBY.svg)](https://asciinema.org/a/tx0mPlCq7kUav5fT3bsiGHKBY)
+[![asciicast](https://asciinema.org/a/SGFJ2gIesDGqmGc21RKSZyWkE.svg)](https://asciinema.org/a/SGFJ2gIesDGqmGc21RKSZyWkE)
