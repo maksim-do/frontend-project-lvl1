@@ -9,7 +9,7 @@ const operators = {
 };
 
 const getOperation = () => {
-  const codOperator = Math.floor(Math.random() * Math.floor(3));
+  const codOperator = getRandomNumber(2);
   return operators[codOperator];
 };
 

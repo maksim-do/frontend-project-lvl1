@@ -2,11 +2,13 @@ import readlineSync from 'readline-sync';
 import checkParity from './games/even';
 import calculator from './games/calc';
 import findDcd from './games/gcd';
+import findNumber from './games/progression';
 
 const prepareData = {
   even: checkParity,
   calc: calculator,
   gcd: findDcd,
+  progression: findNumber,
 };
 
 const hello = (task) => {
