@@ -16,11 +16,11 @@ const getOperation = () => {
 const metodPrepareData = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
-  const [operator, calculation] = getOperation();
+  const [operator, getCalculation] = getOperation();
   const data = `${number1} ${operator} ${number2}`;
   return {
     data,
-    answer: `${calculation(number1, number2)}`,
+    answer: `${getCalculation(number1, number2)}`,
   };
 };
 

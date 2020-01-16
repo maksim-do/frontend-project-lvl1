@@ -16,7 +16,7 @@ const getData = (array, index) => {
 
 const metodPrepareData = () => {
   const progression = getProgression();
-  const randomIndex = getRandomNumber(10);
+  const randomIndex = getRandomNumber(9);
   const answer = `${progression[randomIndex]}`;
   const data = getData(progression, randomIndex);
   return {

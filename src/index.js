@@ -1,14 +1,16 @@
 import readlineSync from 'readline-sync';
 import checkParity from './games/even';
 import calculator from './games/calc';
-import findDcd from './games/gcd';
+import findGcd from './games/gcd';
 import findNumber from './games/progression';
+import cheskPrime from './games/prime';
 
 const prepareData = {
   even: checkParity,
   calc: calculator,
-  gcd: findDcd,
+  gcd: findGcd,
   progression: findNumber,
+  prime: cheskPrime,
 };
 
 const hello = (task) => {
@@ -19,7 +21,7 @@ const hello = (task) => {
 };
 
 
-const gameStage = ({ data, answer }) => {
+const stageGame = ({ data, answer }) => {
   console.log(`Question: ${data}`);
   const answerUser = readlineSync.question('Your answer: ');
   return answer !== answerUser ? answerUser : false;
@@ -31,9 +33,9 @@ const game = (metodPrepare, attempts, userName) => {
     return;
   }
   const { data, answer } = metodPrepare();
-  const resultGameStage = gameStage({ data, answer });
-  if (resultGameStage) {
-    console.log(`'${resultGameStage}' is wrong answer ;(. Correct answer was "'${answer}'.\nLet's try again, ${userName}!`);
+  const resultStagGame = stageGame({ data, answer });
+  if (resultStagGame) {
+    console.log(`'${resultStagGame}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${userName}!`);
     return;
   }
   console.log('Correct!');

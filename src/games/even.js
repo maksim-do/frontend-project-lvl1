@@ -2,16 +2,14 @@ import getRandomNumber from '../getRandomNumber';
 
 const mission = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const checkParity = (number) => {
-  const parity = number % 2 ? 'no' : 'yes';
-  return parity;
-};
+const isParity = (number) => !(number % 2);
 
 const metodPrepareData = () => {
   const data = getRandomNumber();
+  const answer = isParity(data) ? 'yes' : 'no';
   return {
     data,
-    answer: checkParity(data),
+    answer,
   };
 };
 
