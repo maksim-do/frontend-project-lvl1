@@ -4,7 +4,7 @@ const mission = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isParity = (number) => !(number % 2);
 
-const metodPrepareData = () => {
+const getData = () => {
   const data = getRandomNumber();
   const answer = isParity(data) ? 'yes' : 'no';
   return {
@@ -15,5 +15,5 @@ const metodPrepareData = () => {
 
 export default () => ({
   mission,
-  metodPrepareData,
+  getData,
 });

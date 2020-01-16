@@ -13,7 +13,7 @@ const getOperation = () => {
   return operators[codOperator];
 };
 
-const metodPrepareData = () => {
+const getData = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const [operator, getCalculation] = getOperation();
@@ -26,5 +26,5 @@ const metodPrepareData = () => {
 
 export default () => ({
   mission,
-  metodPrepareData,
+  getData,
 });

@@ -12,7 +12,7 @@ const isPrime = (number) => {
   return iter(2);
 };
 
-const metodPrepareData = () => {
+const getData = () => {
   const number = getRandomNumber();
   const answer = isPrime(number) ? 'yes' : 'no';
   const data = `${number}`;
@@ -24,5 +24,5 @@ const metodPrepareData = () => {
 
 export default () => ({
   mission,
-  metodPrepareData,
+  getData,
 });

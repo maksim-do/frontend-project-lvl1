@@ -13,7 +13,7 @@ const prepareData = {
   prime: cheskPrime,
 };
 
-const hello = (task) => {
+const greet = (task) => {
   console.log(`Welcome to the Brain Games!\n${task}`);
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello ${userName}!`);
@@ -27,8 +27,8 @@ const stageGame = ({ data, answer }) => {
   return answer !== answerUser ? answerUser : false;
 };
 
-const game = (metodPrepare, attempts, userName) => {
-  if (attempts === 0) {
+const game = (metodPrepare, attemptCount, userName) => {
+  if (attemptCount === 0) {
     console.log(`Congratulations, ${userName}!`);
     return;
   }
@@ -39,12 +39,12 @@ const game = (metodPrepare, attempts, userName) => {
     return;
   }
   console.log('Correct!');
-  game(metodPrepare, attempts - 1, userName);
+  game(metodPrepare, attemptCount - 1, userName);
 };
 
 export default (nameOfGame) => {
-  const numberOfAttempts = 3;
-  const { mission, metodPrepareData } = prepareData[nameOfGame]();
-  const userName = hello(mission);
-  game(metodPrepareData, numberOfAttempts, userName);
+  const attemptCount = 3;
+  const { mission, getData } = prepareData[nameOfGame]();
+  const userName = greet(mission);
+  game(getData, attemptCount, userName);
 };

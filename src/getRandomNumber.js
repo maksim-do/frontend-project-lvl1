@@ -1,1 +1,3 @@
-export default (a = 100) => Math.floor(Math.random() * (a + 1));
+const limitationOfGeneratedMumbers = 500;
+
+export default (a = limitationOfGeneratedMumbers) => Math.floor(Math.random() * (a + 1));

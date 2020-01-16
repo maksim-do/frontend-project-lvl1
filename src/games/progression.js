@@ -8,17 +8,17 @@ const getProgression = () => {
   return Array(10).fill(0).map((el, index) => start + step * index);
 };
 
-const getData = (array, index) => {
+const getTask = (array, index) => {
   const newArray = array.slice();
   newArray[index] = '..';
   return newArray.join();
 };
 
-const metodPrepareData = () => {
+const getData = () => {
   const progression = getProgression();
   const randomIndex = getRandomNumber(9);
   const answer = `${progression[randomIndex]}`;
-  const data = getData(progression, randomIndex);
+  const data = getTask(progression, randomIndex);
   return {
     data,
     answer,
@@ -27,5 +27,5 @@ const metodPrepareData = () => {
 
 export default () => ({
   mission,
-  metodPrepareData,
+  getData,
 });

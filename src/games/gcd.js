@@ -10,7 +10,7 @@ const getDivizor = (number1, number2) => {
   return getDivizor(divider, remainder);
 };
 
-const metodPrepareData = () => {
+const getData = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const data = `${number1} ${number2}`;
@@ -22,5 +22,5 @@ const metodPrepareData = () => {
 
 export default () => ({
   mission,
-  metodPrepareData,
+  getData,
 });
