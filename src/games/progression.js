@@ -19,9 +19,9 @@ const getDataForGame = () => {
   const progression = getProgression();
   const randomIndex = getRandomNumber(9);
   const answer = `${progression[randomIndex]}`;
-  const data = getTask(progression, randomIndex);
+  const question = getTask(progression, randomIndex);
   return {
-    data,
+    question,
     answer,
   };
 };

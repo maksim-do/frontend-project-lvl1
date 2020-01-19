@@ -18,9 +18,9 @@ const getDataForGame = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const [operator, getCalculation] = getOperation();
-  const data = `${number1} ${operator} ${number2}`;
+  const question = `${number1} ${operator} ${number2}`;
   return {
-    data,
+    question,
     answer: `${getCalculation(number1, number2)}`,
   };
 };

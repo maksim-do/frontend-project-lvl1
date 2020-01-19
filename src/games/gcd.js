@@ -14,9 +14,9 @@ const getDivizor = (number1, number2) => {
 const getDataForGame = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
-  const data = `${number1} ${number2}`;
+  const question = `${number1} ${number2}`;
   return {
-    data,
+    question,
     answer: `${getDivizor(number1, number2)}`,
   };
 };
