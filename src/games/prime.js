@@ -1,4 +1,5 @@
 import getRandomNumber from '../getRandomNumber';
+import playGame from '..';
 
 const mission = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -12,7 +13,7 @@ const isPrime = (number) => {
   return iter(2);
 };
 
-const getData = () => {
+const getDataForGame = () => {
   const number = getRandomNumber();
   const answer = isPrime(number) ? 'yes' : 'no';
   const data = `${number}`;
@@ -22,7 +23,7 @@ const getData = () => {
   };
 };
 
-export default () => ({
+export default () => playGame({
   mission,
-  getData,
+  getDataForGame,
 });

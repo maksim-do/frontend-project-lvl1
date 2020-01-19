@@ -1,4 +1,5 @@
 import getRandomNumber from '../getRandomNumber';
+import playGame from '..';
 
 const mission = 'What is the result of the expression?';
 
@@ -13,7 +14,7 @@ const getOperation = () => {
   return operators[codOperator];
 };
 
-const getData = () => {
+const getDataForGame = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const [operator, getCalculation] = getOperation();
@@ -24,7 +25,7 @@ const getData = () => {
   };
 };
 
-export default () => ({
+export default () => playGame({
   mission,
-  getData,
+  getDataForGame,
 });

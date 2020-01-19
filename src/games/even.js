@@ -1,10 +1,11 @@
 import getRandomNumber from '../getRandomNumber';
+import playGame from '..';
 
 const mission = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isParity = (number) => !(number % 2);
 
-const getData = () => {
+const getDataForGame = () => {
   const data = getRandomNumber();
   const answer = isParity(data) ? 'yes' : 'no';
   return {
@@ -13,7 +14,7 @@ const getData = () => {
   };
 };
 
-export default () => ({
+export default () => playGame({
   mission,
-  getData,
+  getDataForGame,
 });

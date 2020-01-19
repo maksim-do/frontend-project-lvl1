@@ -1,4 +1,5 @@
 import getRandomNumber from '../getRandomNumber';
+import playGame from '..';
 
 const mission = 'What number is missing in the progression?';
 
@@ -14,7 +15,7 @@ const getTask = (array, index) => {
   return newArray.join();
 };
 
-const getData = () => {
+const getDataForGame = () => {
   const progression = getProgression();
   const randomIndex = getRandomNumber(9);
   const answer = `${progression[randomIndex]}`;
@@ -25,7 +26,7 @@ const getData = () => {
   };
 };
 
-export default () => ({
+export default () => playGame({
   mission,
-  getData,
+  getDataForGame,
 });

@@ -1,25 +1,4 @@
 import readlineSync from 'readline-sync';
-import checkParity from './games/even';
-import calculator from './games/calc';
-import findGcd from './games/gcd';
-import findNumber from './games/progression';
-import cheskPrime from './games/prime';
-
-const prepareData = {
-  even: checkParity,
-  calc: calculator,
-  gcd: findGcd,
-  progression: findNumber,
-  prime: cheskPrime,
-};
-
-const greet = (task) => {
-  console.log(`Welcome to the Brain Games!\n${task}`);
-  const userName = readlineSync.question('May I have your name?: ');
-  console.log(`Hello ${userName}!`);
-  return userName;
-};
-
 
 const stageGame = ({ data, answer }) => {
   console.log(`Question: ${data}`);
@@ -42,9 +21,10 @@ const game = (metodPrepare, attemptCount, userName) => {
   game(metodPrepare, attemptCount - 1, userName);
 };
 
-export default (nameOfGame) => {
+export default ({ mission, getDataForGame }) => {
   const attemptCount = 3;
-  const { mission, getData } = prepareData[nameOfGame]();
-  const userName = greet(mission);
-  game(getData, attemptCount, userName);
+  console.log(`Welcome to the Brain Games!\n${mission}`);
+  const userName = readlineSync.question('May I have your name?: ');
+  console.log(`Hello ${userName}!`);
+  game(getDataForGame, attemptCount, userName);
 };
