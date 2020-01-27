@@ -2,11 +2,13 @@ import getRandomNumber from '../getRandomNumber';
 import playGame from '..';
 
 const mission = 'What number is missing in the progression?';
+const lengthSquence = 10;
 
 const getProgression = () => {
-  const start = getRandomNumber();
-  const step = getRandomNumber();
-  return Array(10).fill(0).map((el, index) => start + step * index);
+  const limitationOfGeneratedNumbers = [0, 1000];
+  const start = getRandomNumber(...limitationOfGeneratedNumbers);
+  const step = getRandomNumber(...limitationOfGeneratedNumbers);
+  return Array(lengthSquence).fill(0).map((el, index) => start + step * index);
 };
 
 const getTask = (array, index) => {
@@ -16,8 +18,9 @@ const getTask = (array, index) => {
 };
 
 const getDataForGame = () => {
+  const indexNumber = [0, lengthSquence - 1];
   const progression = getProgression();
-  const randomIndex = getRandomNumber(9);
+  const randomIndex = getRandomNumber(...indexNumber);
   const answer = `${progression[randomIndex]}`;
   const question = getTask(progression, randomIndex);
   return {

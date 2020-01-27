@@ -14,7 +14,8 @@ const isPrime = (number) => {
 };
 
 const getDataForGame = () => {
-  const number = getRandomNumber();
+  const limitationOfGeneratedNumbers = [0, 1000];
+  const number = getRandomNumber(...limitationOfGeneratedNumbers);
   const answer = isPrime(number) ? 'yes' : 'no';
   const question = `${number}`;
   return {

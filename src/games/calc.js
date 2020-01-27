@@ -10,13 +10,15 @@ const operators = {
 };
 
 const getOperation = () => {
-  const codOperator = getRandomNumber(2);
+  const propertyNumber = [0, 2];
+  const codOperator = getRandomNumber(...propertyNumber);
   return operators[codOperator];
 };
 
 const getDataForGame = () => {
-  const number1 = getRandomNumber();
-  const number2 = getRandomNumber();
+  const limitationOfGeneratedNumbers = [0, 500];
+  const number1 = getRandomNumber(...limitationOfGeneratedNumbers);
+  const number2 = getRandomNumber(...limitationOfGeneratedNumbers);
   const [operator, getCalculation] = getOperation();
   const question = `${number1} ${operator} ${number2}`;
   return {

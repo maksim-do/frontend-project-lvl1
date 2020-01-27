@@ -2,7 +2,7 @@
   "name": "my-frontend-project-lvl1",
   "version": "1.0.0",
   "description": "frontend-project-lvl1",
-  "main": "dist/bin/brain-even.js",
+  "main": "",
   "bin": {
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",

@@ -12,8 +12,9 @@ const getDivizor = (number1, number2) => {
 };
 
 const getDataForGame = () => {
-  const number1 = getRandomNumber();
-  const number2 = getRandomNumber();
+  const limitationOfGeneratedNumbers = [0, 100];
+  const number1 = getRandomNumber(...limitationOfGeneratedNumbers);
+  const number2 = getRandomNumber(...limitationOfGeneratedNumbers);
   const question = `${number1} ${number2}`;
   return {
     question,
