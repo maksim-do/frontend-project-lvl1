@@ -2,6 +2,8 @@ import getRandomNumber from '../getRandomNumber';
 import playGame from '..';
 
 const mission = 'Find the greatest common divisor of given numbers';
+const minValueNumber = 0;
+const maxValueNumber = 100;
 
 const getDivizor = (number1, number2) => {
   if (number1 === number2) return number1;
@@ -12,9 +14,8 @@ const getDivizor = (number1, number2) => {
 };
 
 const getDataForGame = () => {
-  const limitationOfGeneratedNumbers = [0, 100];
-  const number1 = getRandomNumber(...limitationOfGeneratedNumbers);
-  const number2 = getRandomNumber(...limitationOfGeneratedNumbers);
+  const number1 = getRandomNumber(minValueNumber, maxValueNumber);
+  const number2 = getRandomNumber(minValueNumber, maxValueNumber);
   const question = `${number1} ${number2}`;
   return {
     question,
@@ -22,7 +23,7 @@ const getDataForGame = () => {
   };
 };
 
-export default () => playGame({
+export default () => playGame(
   mission,
   getDataForGame,
-});
+);
