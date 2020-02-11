@@ -19,7 +19,7 @@ const getDataForGame = () => {
   const question = `${number1} ${number2}`;
   return {
     question,
-    answer: `${getDivizor(number1, number2)}`,
+    answer: String(getDivizor(number1, number2)),
   };
 };
 
