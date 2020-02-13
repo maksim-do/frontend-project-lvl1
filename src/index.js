@@ -18,8 +18,8 @@ const playGame = (getDataForGame, attempt, userName) => {
   playGame(getDataForGame, attempt - 1, userName);
 };
 
-export default (mission, getDataForGame) => {
-  console.log(`Welcome to the Brain Games!\n${mission}`);
+export default (description, getDataForGame) => {
+  console.log(`Welcome to the Brain Games!\n${description}`);
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello ${userName}!`);
   playGame(getDataForGame, attemptCount, userName);

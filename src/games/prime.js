@@ -1,7 +1,7 @@
 import getRandomNumber from '../getRandomNumber';
 import playGame from '..';
 
-const mission = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const minValueNumber = 0;
 const maxValueNumber = 1000;
 
@@ -26,6 +26,6 @@ const getDataForGame = () => {
 };
 
 export default () => playGame(
-  mission,
+  description,
   getDataForGame,
 );

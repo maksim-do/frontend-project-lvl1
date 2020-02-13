@@ -1,7 +1,7 @@
 import getRandomNumber from '../getRandomNumber';
 import playGame from '..';
 
-const mission = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 const minValueNumber = 0;
 const maxValueNumber = 1000;
 
@@ -17,6 +17,6 @@ const getDataForGame = () => {
 };
 
 export default () => playGame(
-  mission,
+  description,
   getDataForGame,
 );

@@ -1,7 +1,7 @@
 import getRandomNumber from '../getRandomNumber';
 import playGame from '..';
 
-const mission = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 const lengthProgression = 10;
 const minValueNumber = 0;
 const maxValueNumber = 1000;
@@ -31,6 +31,6 @@ const getDataForGame = () => {
 };
 
 export default () => playGame(
-  mission,
+  description,
   getDataForGame,
 );

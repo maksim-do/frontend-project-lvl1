@@ -1,7 +1,7 @@
 import getRandomNumber from '../getRandomNumber';
 import playGame from '..';
 
-const mission = 'Find the greatest common divisor of given numbers';
+const description = 'Find the greatest common divisor of given numbers';
 const minValueNumber = 0;
 const maxValueNumber = 100;
 
@@ -24,6 +24,6 @@ const getDataForGame = () => {
 };
 
 export default () => playGame(
-  mission,
+  description,
   getDataForGame,
 );

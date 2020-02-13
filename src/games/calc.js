@@ -1,7 +1,7 @@
 import getRandomNumber from '../getRandomNumber';
 import playGame from '..';
 
-const mission = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const minValueNumber = 0;
 const maxValueNumber = 500;
@@ -32,6 +32,6 @@ const getDataForGame = () => {
 };
 
 export default () => playGame(
-  mission,
+  description,
   getDataForGame,
 );
