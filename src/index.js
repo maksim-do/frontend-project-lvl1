@@ -10,9 +10,8 @@ const playGame = (getDataForGame, attempt, userName) => {
   const { question, answer } = getDataForGame();
   console.log(`Question: ${question}`);
   const answerUser = readlineSync.question('Your answer: ');
-  const resultStagGame = answer !== answerUser ? answerUser : false;
-  if (resultStagGame) {
-    console.log(`'${resultStagGame}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${userName}!`);
+  if (answer !== answerUser) {
+    console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${userName}!`);
     return;
   }
   console.log('Correct!');
