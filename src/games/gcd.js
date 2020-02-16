@@ -5,12 +5,11 @@ const description = 'Find the greatest common divisor of given numbers';
 const minValueNumber = 0;
 const maxValueNumber = 100;
 
-const getDivizor = (number1, number2) => {
-  if (number1 === number2) return number1;
+const getGCD = (number1, number2) => {
   const [dividend, divider] = number1 > number2 ? [number1, number2] : [number2, number1];
   const remainder = dividend % divider;
   if (!remainder) return divider;
-  return getDivizor(divider, remainder);
+  return getGCD(divider, remainder);
 };
 
 const getDataForGame = () => {
@@ -19,7 +18,7 @@ const getDataForGame = () => {
   const question = `${number1} ${number2}`;
   return {
     question,
-    answer: String(getDivizor(number1, number2)),
+    answer: String(getGCD(number1, number2)),
   };
 };
 
