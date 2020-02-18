@@ -22,6 +22,14 @@
     "type": "git",
     "url": "git+https://github.com/maksim-do/frontend-project-lvl1.git"
   },
+  "keywords": [
+    "brain-games",
+    "gsd",
+    "even",
+    "progression",
+    "prime",
+    "calc"
+  ],
   "author": "Maksim Do",
   "license": "ISC",
   "bugs": {
