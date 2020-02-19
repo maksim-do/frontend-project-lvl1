@@ -21,9 +21,9 @@ const getQuestion = (progression, index) => {
 
 const getDataForGame = () => {
   const progression = getProgression();
-  const randomIndex = getRandomNumber(minIndexNumber, lengthProgression - 1);
-  const answer = String(progression[randomIndex]);
-  const question = getQuestion(progression, randomIndex);
+  const hiddenMemberIndex = getRandomNumber(minIndexNumber, lengthProgression - 1);
+  const answer = String(progression[hiddenMemberIndex]);
+  const question = getQuestion(progression, hiddenMemberIndex);
   return {
     question,
     answer,
