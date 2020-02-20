@@ -7,17 +7,15 @@ const minValueNumber = 0;
 const maxValueNumber = 500;
 
 const operators = {
-  0: ['+', (a, b) => a + b],
-  1: ['-', (a, b) => a - b],
-  2: ['*', (a, b) => a * b],
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '*': (a, b) => a * b,
 };
 
-const minValueProperty = 0;
-const maxValueProperty = Object.keys(operators).length - 1;
-
 const getOperation = () => {
-  const codOperator = getRandomNumber(minValueProperty, maxValueProperty);
-  return operators[codOperator];
+  const properties = Object.keys(operators);
+  const operator = properties[getRandomNumber(0, properties.length - 1)];
+  return [operator, operators[operator]];
 };
 
 const getDataForGame = () => {
