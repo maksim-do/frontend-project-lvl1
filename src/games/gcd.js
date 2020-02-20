@@ -2,8 +2,6 @@ import getRandomNumber from '../getRandomNumber';
 import playGame from '..';
 
 const description = 'Find the greatest common divisor of given numbers';
-const minValueNumber = 0;
-const maxValueNumber = 100;
 
 const getGCD = (number1, number2) => {
   const [dividend, divider] = number1 > number2 ? [number1, number2] : [number2, number1];
@@ -13,8 +11,8 @@ const getGCD = (number1, number2) => {
 };
 
 const getDataForGame = () => {
-  const number1 = getRandomNumber(minValueNumber, maxValueNumber);
-  const number2 = getRandomNumber(minValueNumber, maxValueNumber);
+  const number1 = getRandomNumber(0, 100);
+  const number2 = getRandomNumber(0, 100);
   const question = `${number1} ${number2}`;
   return {
     question,

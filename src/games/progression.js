@@ -3,13 +3,11 @@ import playGame from '..';
 
 const description = 'What number is missing in the progression?';
 const lengthProgression = 10;
-const minValueNumber = 0;
-const maxValueNumber = 1000;
-const minIndexNumber = 0;
+const minHiddenMemberIndex = 0;
 
 const getProgression = () => {
-  const start = getRandomNumber(minValueNumber, maxValueNumber);
-  const step = getRandomNumber(minValueNumber, maxValueNumber);
+  const start = getRandomNumber(0, 100);
+  const step = getRandomNumber(0, 100);
   return Array(lengthProgression).fill(0).map((el, index) => start + step * index);
 };
 
@@ -21,7 +19,7 @@ const getQuestion = (progression, index) => {
 
 const getDataForGame = () => {
   const progression = getProgression();
-  const hiddenMemberIndex = getRandomNumber(minIndexNumber, lengthProgression - 1);
+  const hiddenMemberIndex = getRandomNumber(minHiddenMemberIndex, lengthProgression - 1);
   const answer = String(progression[hiddenMemberIndex]);
   const question = getQuestion(progression, hiddenMemberIndex);
   return {

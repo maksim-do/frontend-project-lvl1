@@ -3,9 +3,6 @@ import playGame from '..';
 
 const description = 'What is the result of the expression?';
 
-const minValueNumber = 0;
-const maxValueNumber = 500;
-
 const operators = {
   '+': (a, b) => a + b,
   '-': (a, b) => a - b,
@@ -19,8 +16,8 @@ const getOperation = () => {
 };
 
 const getDataForGame = () => {
-  const number1 = getRandomNumber(minValueNumber, maxValueNumber);
-  const number2 = getRandomNumber(minValueNumber, maxValueNumber);
+  const number1 = getRandomNumber(0, 500);
+  const number2 = getRandomNumber(0, 500);
   const [operator, getCalculation] = getOperation();
   const question = `${number1} ${operator} ${number2}`;
   return {
