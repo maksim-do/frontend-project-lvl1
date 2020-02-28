@@ -8,7 +8,7 @@ const minHiddenMemberIndex = 0;
 const getProgression = () => {
   const start = getRandomNumber(0, 100);
   const step = getRandomNumber(0, 100);
-  return Array(lengthProgression).fill(0).map((el, index) => start + step * index);
+  return Array(lengthProgression).fill().map((el, index) => start + step * index);
 };
 
 const getQuestion = (progression, index) => {
