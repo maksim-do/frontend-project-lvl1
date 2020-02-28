@@ -11,7 +11,8 @@ const playGame = (getDataForGame, attempt, userName) => {
   console.log(`Question: ${question}`);
   const answerUser = readlineSync.question('Your answer: ');
   if (answer !== answerUser) {
-    console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${userName}!`);
+    console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answer}'.`);
+    console.log(`Let's try again, ${userName}!`);
     return;
   }
   console.log('Correct!');
@@ -19,7 +20,8 @@ const playGame = (getDataForGame, attempt, userName) => {
 };
 
 export default (description, getDataForGame) => {
-  console.log(`Welcome to the Brain Games!\n${description}`);
+  console.log('Welcome to the Brain Games!');
+  console.log(description);
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello ${userName}!`);
   playGame(getDataForGame, attemptCount, userName);
